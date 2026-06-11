@@ -1,26 +1,67 @@
 #import "../utils.typ": *
 
 #align(center + horizon)[
-  #text(3.5em, font: "Fraunces", weight: "black")[
-    *Technical Interview Prep*
+
+  #text(font: "Fraunces", size: 35pt, weight: "black")[
+    Technical Interview Prep
   ]
-  #v-space
-  #text(2em)[
+
+
+  #v(1em, weak: true)
+
+  #text(size: 13pt, style: "italic", fill: ink-muted)[
+    a friendly guide to the LeetCode-style coding interview
+  ]
+
+  #v(5em, weak: true)
+
+  #text(font: "Fraunces", size: 15pt, weight: "semibold")[
     by Pietro (Pi) Agnoli
   ]
-  #smol-v-space
-  #text(1em)[
-    #link("https://pietroagnoli.com", "website") | #link("https://github.com/TheCaptainCraken", "GitHub") | #link("mailto:pietro_agnoli@proton.me", "email") | #link("https://www.linkedin.com/in/pietro-agnoli/", "LinkedIn")
+
+  #v(1.4em, weak: true)
+
+  #text(size: 10pt)[
+    #link("https://pietroagnoli.com", "website")
+    #text(fill: accent)[·]
+    #link("https://github.com/TheCaptainCraken", "GitHub")
+    #text(fill: accent)[·]
+    #link("mailto:pietro_agnoli@proton.me", "email")
+    #text(fill: accent)[·]
+    #link("https://www.linkedin.com/in/pietro-agnoli/", "LinkedIn")
   ]
 ]
 
 #pagebreak()
 
 #align(center + horizon)[
-  I hope these notes will help you in your journey as much as they helped me. #emoji.heart I believe in you!
-]
-#align(right + horizon)[
-  _~Pi, May 2026_
+  #block(width: 75%)[
+    #text(size: 12pt, style: "italic")[
+      If you're reading these notes, you're probably looking for a job.
+      \
+      \
+      I know it can feel scary: the waiting, the doubting, the wondering if you're enough.
+      \
+      \
+      Remember life is a door that only opens forward.
+      \
+      \
+      Right now, with every page you study and every problem you solve, you're becoming someone remarkable.
+      \
+      \
+      Take a breath, pour yourself something warm, and trust the work. You can be anything. I believe in you.
+      \
+      \
+      \
+      Be crunchy! #emoji.crocodile
+    ]
+
+    #v(2em, weak: true)
+
+    #align(right)[
+      #text(font: "Fraunces", size: 11pt, fill: ink-muted)[~ Pi, May 2026]
+    ]
+  ]
 ]
 #pagebreak()
 
@@ -28,21 +69,17 @@
 
 #pagebreak()
 
-= The _LeetCode style_ Coding Interview
+= Introduction
 
-I started these notes after failing a technical assessment at Amazon Web Services. Turns out you need more than a couple of days to lear how to solve LeetCode-style problems!
+These notes were born from a failure: I didn't pass a technical assessment at Amazon Web Services. I only had a couple of days to prepare and clearly it wasn't enough time.
 
-What I've discovered in this journey is *you don't need to be a genius to solve a hard problem*. All it takes is simple, good old-fashioned practice.
+Here's the good news though: *you don't need to be a genius to solve a hard problem*. You need reps. That's it. Pattern after pattern, problem after problem, until the tricks start jumping out at you.
 
-These problems are very different from what the day-to-day job looks like, they aren't testing you for your skill as an engineer. They are testing you on a somewhat-related ability just to see if you' re willing to put in the hours to learn it. Treat is as such.
+Let's be honest: these problems have almost nothing to do with the actual job. Companies use them to check if you're willing to put in the hours.
 
-Now it's easy to get frustrated, I get you. Think about it this way: you're investing time to find a very good job!
+Frustrated? Totally normal. But you're grinding your way toward a great job, and honestly, somewhere along the way it gets _fun_. I now crack these like my grandma cracks her crosswords. I promise you that nailing a clean, optimal solution feels *so* good.
 
-On a side note, I have come to really enjoy this type of problems, I sometimes feel like my grandma when she's doing her crosswords! The feeling you get when finally you have a clean optimal solution is so good!
-
-If you need to take one thing out from this introduction of mine, take this:
-
-#v-space
+People don't really read introductions in my experience. If you can take just one thing out of this make it:
 
 #tip()[
   LeetCode-style problems are an *exercise in pattern recognition*, not software development.
@@ -50,7 +87,15 @@ If you need to take one thing out from this introduction of mine, take this:
 
 == How This Guide Works
 
-This guide is meant to be a documentation of everything I have learned, I will link you cool resources I enjoyed at the end. This material will be a mix of them and I will also give you some of my favourite practice places. For each topic I will give you a list of problems that use it. Feel free to try (you' re actually encouraged).
+This guide will teach you everything I know. Each chapter will be about a pattern. At the end of each chapter I will link you useful resources and practice problems.
+
+Try and complete the practice problems *without* looking at the resources.
+
+If you get stuck for more than 20 minutes then look at the resources.
+
+If even with those you can't solve it, ask your favorite LLM to guide you.
+
+At the end of each topic I will give you a short, brain friendly summary.
 
 === Notation
 
@@ -68,7 +113,11 @@ In the following pages, you will encounter these boxes. They are highlights and 
   This is a summary. It condenses a whole section into a few lines, perfect for a quick review before an interview.
 ]
 
-Code block will inevitably appear, they will be in Python 3. Why? because it's a super simple and the most common language. I had to use it even tho I love Rust more! Sometimes you can't code in it. Other good alternatives are C++, Java and Javascript.
+Code blocks are in Python 3: simple, everywhere, interview-approved. (My heart says Rust, but not every interview lets you use it!) C++, Java and JavaScript are solid picks too.
+
+#tip()[
+  Many people make the mistake of searching for the 'perfect' language for these problems. The truth is any of the ones I mentioned is fine.
+]
 
 This is a code sample:
 ```py
