@@ -2,22 +2,18 @@
 
 = Two Pointers
 
-This simple patterns comes up way often that you'd think.
+Two pointers shows up more often than you'd expect.
 
-The idea is simple: take two pointers and do a pass over the array.
+You walk two pointers across an array in a single pass. They either move toward each other or in the same direction.
 
-The two pointers can either go in the same or opposite direction. The last one is more common.
+== Opposite Direction
 
-== Opposite Direction Pointers
-
-Used when you have some kind of sorted array. For example:
+The pointers start at the ends and move inward. Works on sorted arrays and symmetric problems:
 
 - Palindromes
 - Reversals
 - Merging sorted data
 - "K"-sized comparisons
-
-The usual setup for a solution looks like this:
 
 #pseudocode-list[
   + create _left_ pointer at the start
@@ -29,11 +25,11 @@ The usual setup for a solution looks like this:
 ]
 
 
-== Same Direction Pointers
+== Same Direction
 
-Used when you need to track a range. Classic example is the fast-slow two pointers technique:
+Both pointers start together and move forward, one faster than the other. Useful for tracking a range or spotting cycles.
 
-Let's say you need to find the middle of a linked list. To do it you can use two pointers!
+To find the middle of a linked list, send one pointer twice as fast. When it hits the end, the slow one sits in the middle.
 
 #pseudocode-list[
   + create a _fast_ pointer at 0
@@ -45,11 +41,9 @@ Let's say you need to find the middle of a linked list. To do it you can use two
   + return the _slow_ pointer
 ]
 
-See? Simple and effective. In a similar way you can find if there is a cycle in the data structure.
+The same trick detects cycles: if the fast pointer ever meets the slow one, there's a loop.
 
 == Example Problems
-
-Here are some example problems solved using this technique.
 
 === #link("https://leetcode.com/problems/valid-palindrome/")[Valid Palindrome]
 
@@ -61,11 +55,11 @@ Here are some example problems solved using this technique.
 
 ==== Solution
 
-The problem is straightforward: check if a string is palindrome. There are a couple of curve balls:
-- case does not count
+Check if a string reads the same both ways, with two catches:
+- case doesn't matter
 - non-alphanumeric characters don't count (e.g. `,` `-` `+`)
 
-This is a clear use case for the two pointers technique. We are going to use the Opposite Direction Pointers approach.
+Opposite direction pointers fit here.
 
 #pseudocode-list[
   + create _left_ pointer at the start
@@ -88,11 +82,11 @@ This is a clear use case for the two pointers technique. We are going to use the
 ]
 
 #tip()[
-  The two *while* in the main one are there to skip over non alphanumeric characters so that both pointers always stay on valid characters.
+  The two inner *while* loops skip non-alphanumeric characters, so both pointers always land on valid ones before comparing.
 ]
 
 
-In Python this is:
+In Python:
 
 ```py
 def isPalindrome(self, s: str) -> bool:
@@ -118,13 +112,11 @@ def isPalindrome(self, s: str) -> bool:
 
 #problem()[
   Given the head of a singly linked list, return the middle node of the linked list.
-  
+
   If there are two middle nodes, return the second middle node.
 ]
 
-This is a super good example of the same direction two pointers approach.
-
-We can solve it easily by having a slow pointer move one space at a time and a fast pointer moving two places. When the fast pointer cannot go forward then we know the slow is in the middle!
+A clean case for same direction pointers. Move the slow pointer one node at a time and the fast pointer two. When the fast pointer runs out of nodes, the slow one is at the middle.
 
 ```py
 # Definition for singly-linked list.
@@ -139,6 +131,6 @@ class Solution:
       while fast and fast.next:
         slow = slow.next
         fast = fast.next.next
-      
+
       return slow
 ```
