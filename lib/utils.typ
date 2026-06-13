@@ -221,6 +221,14 @@
   body,
 )
 
+#let problem(body) = callout(
+  accent: accent,
+  title: "Problem Statement",
+  icon: emoji.quest,
+  body,
+)
+
+
 #let important(body) = callout(
   accent: red,
   title: "Important",

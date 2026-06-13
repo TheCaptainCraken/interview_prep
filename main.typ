@@ -6,4 +6,8 @@
 
 #pagebreak()
 
-#include "lib/chapters/01-arrays.typ"
+#include "lib/chapters/01-two-pointers.typ"
+
+#pagebreak()
+
+#include "lib/chapters/99-data-structures.typ"
