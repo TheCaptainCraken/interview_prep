@@ -4,7 +4,7 @@
 
 This appendix is meant to quickly get you up to speed on all the data structures used in the guide. You don't need to read it all in one sitting. I recommend coming here every time you encounter a new data structure.
 
-== Array
+== Array <array>
 
 An array is a *row of boxes, side by side in memory, each holding one value*. Every box has a number (its _index_), so you can jump straight to box `i` without walking past the others.
 
@@ -83,7 +83,7 @@ Let $n$ be the number of elements.
   - Sliding window, prefix sum, ...
 ]
 
-== Set
+== Set <set>
 
 A set is a *bag of unique values with no order*. You ask "is this value in here?", and it answers almost instantly. Under the hood it's usually a _hash table_: each value is run through a hash function that points straight to its slot.
 
@@ -140,7 +140,7 @@ Let $n$ be the number of elements.
   - Existence
 ]
 
-== Hashmap
+== Hashmap <hashmap>
 
 A hashmap is a *collection of key-value pairs*. You hand it a _key_ and it hands back the _value_ you stored under that key, almost instantly.
 

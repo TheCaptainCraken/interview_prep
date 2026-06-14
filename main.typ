@@ -10,4 +10,12 @@
 
 #pagebreak()
 
-#include "lib/chapters/99-data-structures.typ"
+#include "lib/chapters/02-sliding-window.typ"
+
+#pagebreak()
+
+#include "lib/chapters/A-data-structures.typ"
+
+#pagebreak()
+
+#include "lib/chapters/B-sources.typ"

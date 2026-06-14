@@ -1,6 +1,6 @@
 #import "../utils.typ": *
 
-= Two Pointers
+= Two Pointers <two-pointers>
 
 Two pointers shows up more often than you'd expect.
 
