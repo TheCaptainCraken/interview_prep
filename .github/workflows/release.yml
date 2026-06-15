@@ -19,7 +19,7 @@ jobs:
         uses: typst-community/setup-typst@v4
 
       - name: Compile document
-        run: typst compile --font-path fonts main.typ main.pdf
+        run: typst compile --font-path fonts main.typ junior_swe_interview_prep.pdf
 
       - name: Get commit message
         id: commit
