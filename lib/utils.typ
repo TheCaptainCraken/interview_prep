@@ -210,7 +210,7 @@
     #if icon != none [#icon#h(0.4em)]
     #upper(title)
   ]
-  #v(0.6em, weak: true)
+  #v(1.2em, weak: true)
   #body
 ]
 
