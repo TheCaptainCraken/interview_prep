@@ -32,4 +32,4 @@ jobs:
           name: ${{ steps.commit.outputs.subject }}
           body: |
             Automated docs release for commit ${{ github.sha }}.
-          files: main.pdf
+          files: junior_swe_interview_prep.pdf
